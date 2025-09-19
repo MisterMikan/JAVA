@@ -1,3 +1,4 @@
+import java.util.Arrays;
 public class AscendingBubbleSort {
 
     public static void main(String[] args) {
@@ -10,6 +11,9 @@ public class AscendingBubbleSort {
 
 int[] numbers = {45, 12, 89, 33, 7, 56};
 int length = numbers.length;
+
+System.out.println("Original Array: " + Arrays.toString(numbers));
+System.out.println();
 
   // ----- PROCESS ---------------------------------------------------------------------------
 
