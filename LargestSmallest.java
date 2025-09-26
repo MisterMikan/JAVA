@@ -43,7 +43,6 @@ displayResults(largest, smallest);
 
       return input.nextInt();
 
-
     }
 
 
