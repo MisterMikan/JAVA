@@ -16,7 +16,7 @@ public static void main(String[] args) {
  * 4.) Division
  * 5.) Exit
  * 
- * The user chooses an option.
+ * The user chooses an option
  * If the choice is between 1-4, the program asks for two numbers and perform the operation.
  * If the choice is 5, the program ends.
  * If the user enters an invalid choice, show an error message.
@@ -24,88 +24,104 @@ public static void main(String[] args) {
 
  // ----- INPUT ---------------------
 
-int choice;
+ int choice;
+ double num1, num2, result;
 
-double num1, num2, result; 
+ // ----- PROCESS -------------------
 
-// ----- PROCESS & OUTPUT ------------
-
-do {
-    System.out.println("\n--- MENU DRIVEN CALCULATOR ---");
-    System.out.println("1.) Addition");
-    System.out.println("2.) Subtraction");
-    System.out.println("3.) Multiplication");
-    System.out.println("4.) Division");
-    System.out.println("5.) Exit");
-    System.out.println("Enter your choice: ");
-    choice = input.nextInt();
+    do {
+        System.out.println("\n--- MENU DRIVEN CALCULATOR ---");
+        System.out.println("1.) Addition");
+        System.out.println("2.) Subtraction");
+        System.out.println("3.) Multiplication");
+        System.out.println("4.) Division");
+        System.out.println("5.) Exit");
+        System.out.println("Enter your choice: ");
+        choice = input.nextInt();
 
     switch (choice) {
-
-        case 1: // Addition.
-        System.out.print("Enter first number: ");
-        num1 = input.nextDouble();
-        System.out.print("Enter second number: ");
-        num2 = input.nextDouble();
-
-        result = num1 + num2;
-        System.out.println("Result: " + result);
-
+        case 1: // ADDITION
+            System.out.println("Enter first number: ");
+            num1 = input.nextDouble();
+            System.out.println("Enter second number: ");
+            num2 = input.nextDouble();
+            //
+            result = add(num1, num2);
+            System.out.println("Result: " + result);
             break;
 
-        case 2: // Subtraction.
-        System.out.print("Enter first number: ");
-        num1 = input.nextDouble();
-        System.out.print("Enter second number: ");
-        num2 = input.nextDouble();
-
-        result = num1 - num2;
-        System.out.println("Result: " + result);
-
+        case 2: // SUBTRACTION
+            System.out.println("Enter first number: ");
+            num1 = input.nextDouble();
+            System.out.println("Enter second number: ");
+            num2 = input.nextDouble();
+            //
+            result = subtract(num1, num2);
+            System.out.println("Result: " + result);
             break;
 
-        case 3: // Multiplication.
-        System.out.print("Enter first number: ");
-        num1 = input.nextDouble();
-        System.out.print("Enter second number: ");
-        num2 = input.nextDouble();
-
-        result = num1 * num2;
-        System.out.println("Result: " + result);
-
-            break;
-
-        case 4: // Division.
-        System.out.print("Enter first number: ");
-        num1 = input.nextDouble();
-        System.out.print("Enter second number: ");
-        num2 = input.nextDouble();
-
-            if (num2 == 0) {
-                System.out.println("Error: Division by zero is not allowed.");
-            }else {
-                result = num1 / num2;
-                System.out.println("Result: " + result);
-            }
-
-            break;
-
-        case 5: // Exit.
-        System.out.print("Exiting program...Goodbye :)");
-
+        case 3: // MULTIPLICATION
+            System.out.println("Enter first number: ");
+            num1 = input.nextDouble();
+            System.out.println("Enter second number: ");
+            num2 = input.nextDouble();
+            //
+            result = multiply(num1, num2);
+            System.out.println("Result: " + result);
             break;
             
-    
-        default: // Invalid Choice
-            System.out.println("Invalid Choice! Please enter a number between 1 and 5, Thank You.");
-     }
+        case 4: // DIVISION
+            System.out.println("Enter first number: ");
+            num1 = input.nextDouble();
+            System.out.println("Enter second number: ");
+            num2 = input.nextDouble();
+           
+                if (num2 == 0) {
+                    System.out.println("Error: Division by zero is not allowed.");
+                } else {
+                    result = divide(num1, num2);
+                    System.out.println("Result: " + result);
+                }
+                break;
 
-    } while (choice != 5); // repeat until Exit.
-        
-input.close();
+        case 5: // EXIT
+                System.out.println("Exiting program ... Good Bye!");
+                break;
 
-    }
- }   
+        default: // INVALID CHOICE
+                System.out.println("Invalid Choice! Please enter a number between 1 and 5.");
+        }
 
- // ----- END OF PROGRAM -----------------------
+    } while (choice != 5); 
+
+    input.close();
+
+}
+
+public static double add(double a, double b) {
+    return a + b;
+    //
+}
+
+public static double subtract(double a, double b) {
+    return a - b;
+    //
+}
+
+public static double multiply(double a, double b) {
+    return a * b;
+    //
+}
+
+public static double divide(double a, double b) {
+    return a / b;
+    //
+}
+
+}
+
+
+
+
+
 

@@ -20,34 +20,43 @@ public static void main(String[] args) {
 
  // ----- INPUT ---------------------
 
- int secretNumber = rand.nextInt(100) + 1;
- int guess;
- int attempts = 0;
+ int attempts = playGuessingGame();
+    System.out.println("You guessed the number in " + attempts + " attempts.");
+        input.close();
 
- // ----- PROCESS & OUTPUT ----------
+ }   
 
-    do {
+// ----- PROCESS --------------------
 
-        System.out.print("Guess a number between 1 and 100: ");
-        guess = input.nextInt();
-        attempts++;
+public static int playGuessingGame() {
+
+    int secretNumber = rand.nextInt(100) + 1;
+    int guess;
+    int attempts = 0;
+
+        do {
+
+            System.out.print("Guess a number between 1 and 100: ");
+            guess = input.nextInt();
+            attempts++;
 
         if (guess > secretNumber) {
             System.out.println("Too high! Try again.");
             //
-        }else if (guess < secretNumber) {
+        } else if (guess < secretNumber) {
             System.out.println("Too low! Try again.");
             //
-        }else {
-            System.out.println();
+        } else {
             System.out.println("Congratulations! You guessed the correct number!");
-            System.out.println("You guessed the number in " + attempts + " attemps.");
         }
-    } while (guess != secretNumber);
 
-    input.close();
+// ----- OUTPUT ----------------------
 
- }   
+  } while (guess != secretNumber);
+  
+    return attempts;
+
+ }
 }
 
 // ----- END OF PROGRAM --------------  

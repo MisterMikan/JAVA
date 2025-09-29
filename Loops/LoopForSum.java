@@ -4,33 +4,42 @@ public class LoopForSum {
     static Scanner input = new Scanner(System.in);
 
 public static void main(String[] args) {
+ 
+ // ----- START OF PROGRAM ----------
+ 
+ /* Write a Java program that asks user to enter a positive integer N. The program should then:
+  * 
+  * Use a loop to calculate the sum of the first N natural numbers (1 + 2 + 3 + ... + N).
+  * And display the result.
+  */
 
-// ----- START OF PROGRAM ----------
-
-/*Write a Java program that asks the user to enter a positive integer N. The program should then
- * use a for loop to calculate the sum of the first N natural numbers (1 + 2 + 3 + ... + N)
- * and display the result.
- */
-
-// ----- INPUT ---------------------
+// ----- INPUT ----------------------
 
 System.out.println("Enter a positive integer: ");
 int number = input.nextInt();
 System.out.println();
 
-// ----- PROCESS -------------------
+int sum = sumNaturalNumbers(number);
 
-int sum = number - number;
+System.out.println("The sum of the first " + number + " natural numbers is: " + sum);
 
-for (int i = 1; i <= 5; i++) {
-    sum += i;
-}
+    input.close();
 
-// ----- OUTPUT --------------------
+ }
 
-System.out.println("The sum of the first 5 natural numbers is: " + sum);
+// ----- PROCESS & OUTPUT -----------
+
+ public static int sumNaturalNumbers(int n) {
+
+    int sum = 0;
+
+        for (int i = 1; i <= n; i++) {
+            sum += i;
+        }
+
+        return sum;
 
  }
 }
 
-// ----- END OF PROGRAM ------------
+// ----- END OF PROGRAM --------------

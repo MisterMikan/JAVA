@@ -7,34 +7,42 @@ public static void main(String[] args) {
 
 // ----- START OF PROGRAM ----------
 
-/*Write a Java program that asks the user to enter numbers. Keep asking until the user enters 0. 
- * When the loop ends display the sum of all numbers entered(excluding 0).
+/* Write a Java program that asks the user to enter numbers. \
+ * Keep asking until the user asks 0.
+ * When the loop ends display the sum of all numbers entered (excluding 0).
  */
 
 // ----- INPUT ---------------------
 
-int number;
-int sum = 0;
+int sum = sumNumbers();
 
-System.out.println("Enter a number: ");
-number = input.nextInt();
+    System.out.println("The sum of all entered numbers is: " + sum);
 
-// ----- PROCESS -------------------
+    input.close();
 
-while (number != 0) {
-    sum += number;
-    System.out.println("Enter a number: ");
-    number = input.nextInt();
-    //
-}
+ }
 
-// ----- OUTPUT ---------------------
+// ----- PROCESS & OUTPUT ----------
 
-System.out.println("The sum of all entered numbers is: " + sum);
+ public static int sumNumbers() {
 
-input.close();
+    int number;
+    int sum = 0;
 
+        System.out.println("Enter a number: ");
+        number = input.nextInt();
+
+        while (number != 0) {
+            
+            sum += number;
+            System.out.println("Enter a number: ");
+            number = input.nextInt();
+
+        }
+
+        return sum;
+        
  }
 }
 
-// ----- END OF PROGRAM -------------
+// ----- END OF PROGRAM ------------
